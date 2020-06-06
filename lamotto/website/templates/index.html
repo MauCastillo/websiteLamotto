@@ -5,7 +5,10 @@
 	<title>La Motto</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body class="landing is-preload">
@@ -15,12 +18,6 @@
 		<header id="header" class="alt">
 			<a href="index.html"><img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto"
 					style="width:150px;height:60px;" /></a>
-			<nav id="nav">
-				<ul>
-					<li><a href="index.html">Portada</a></li>
-					<li><a href="#" class="button">Registrate</a></li>
-				</ul>
-			</nav>
 		</header>
 
 		<!-- Banner -->
@@ -29,7 +26,7 @@
 			<br>
 			<br>
 			<ul class="actions special">
-				<li><a href="#" class="button primary">REGISTRATE</a></li>
+				<li><button onclick="OpenModalRegister()" class="button primary">REGISTRATE</button></li>
 			</ul>
 		</section>
 
@@ -47,38 +44,6 @@
 					<p>Moto asistencia como la necesites</p>
 				</header>
 			</section>
-
-			<section class="box special features">
-				<div class="features-row">
-					<section>
-						<span class="icon solid major fa-bolt accent2"></span>
-						<h3>Red de
-							mecánicos a
-							Domicilio</h3>
-						<p></p>
-					</section>
-					<section>
-						<span class="icon solid major fa-chart-area accent3"></span>
-						<h3>Red de
-							talleres</h3>
-						<p></p>
-					</section>
-				</div>
-				<div class="features-row">
-					<section>
-						<span class="icon solid major fa-cloud accent4"></span>
-						<h3>Red de almacenes</h3>
-						<p>accesorios y repuestos</p>
-					</section>
-					<section>
-						<span class="icon solid major fa-lock accent5"></span>
-						<h3>Red de
-							Moto Gruas</h3>
-						<p></p>
-					</section>
-				</div>
-			</section>
-
 			<div class="row">
 				<div class="col-6 col-12-narrower">
 
@@ -114,7 +79,17 @@
 			</div>
 
 		</section>
-
+		<!-- Banner -->
+		<section id="pay_method">
+			<div class="parrafo">
+				<font size="+4"><b>MEDIOS DE PAGO </b></font>
+				<br><br>
+				<font size="+3">Por tu seguridad y la de nuestros motto partners <b>NO ACEPTAMOS PAGO EN EFECTIVO.</b>
+					Realiza tus pagos en línea o transferencias, usando equipos seguros, tu computador o dispositivo
+					móvil personal
+				</font>
+			</div>
+		</section>
 		<!-- CTA -->
 		<section id="cta" class="footer_register">
 			<img src="{% static 'images/mt-1517-home-logo-content1.png' %}" alt="" />
@@ -122,7 +97,9 @@
 					cuidar desde tu celular y te damos
 					todas las opciones</b>
 			</h2>
-			<li><a href="#" class="button registrate_button">REGISTRATE</a></li>
+			<li>
+				<button onclick="OpenModalRegister()" class="button registrate_button">REGISTRATE</button>
+			</li>
 		</section>
 
 		<!-- Footer -->
@@ -133,8 +110,70 @@
 			</ul>
 		</footer>
 	</div>
+	<!-- Modal Form user -->
+	<!-- Modal -->
+	<div id="form_modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
 
-	<!-- Scripts -->
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-row">
+							<h2>Información de contacto</h2>
+							<div class="form-group col-md-6">
+								<label for="inputAddress">Nombre</label>
+								<input type="text" class="form-control" id="inputAddress" placeholder="Nombre">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputEmail4">Email</label>
+								<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+							</div>
+
+						</div>
+						<h2>Permítenos conocer tu moto para personalizar tus servicios</h2>
+						<div class="form-group">
+							<label for="inputAddress">Marca</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								{% for manufacture in manufactures %}
+								<option>{{ manufacture.name }} </option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="inputAddress">Modelo</label>
+							<input type="text" id="datepicker" />
+
+						</div>
+						<div class="form-group">
+							<label for="inputAddress">Cilindraje</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheck">
+								<label class="form-check-label" for="gridCheck">
+									Acepto terminos y condiciones
+								</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Enviar</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">C</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
 	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 	<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
 	<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
@@ -142,7 +181,16 @@
 	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
 	<script src="{% static 'assets/js/util.js' %}"></script>
 	<script src="{% static 'assets/js/main.js' %}"></script>
-
+	<script src="{% static 'assets/js/controller.js' %}"></script>
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 </body>
 
 </html>
