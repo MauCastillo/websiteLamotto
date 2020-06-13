@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<a href="index.html"><img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto"
+			<a href="{% url 'home' %}"><img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto"
 					style="width:150px;height:60px;" /></a>
 		</header>
 
@@ -53,9 +53,11 @@
 						<p>Moteros y Moteras que buscan la comodidad de un taller donde y cuando lo necesitan, la
 							seguridad de un servicio garantizado y el control de encontrar lo que requiere su moto en
 							un solo lugar</p>
-						<ul class="actions special">
+						<!--
+							<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>
+						-->
 					</section>
 
 				</div>
@@ -70,9 +72,11 @@
 							Realiza tus pagos en línea o transferencias,
 							usando equipos seguros, tu computador o
 							dispositivo móvil personal</p>
+						<!--
 						<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>
+						-->
 					</section>
 
 				</div>
@@ -122,41 +126,68 @@
 
 				</div>
 				<div class="modal-body">
-					<form>
+					<form method="post">
+						{% csrf_token %}
 						<div class="form-row">
-							<h2>Información de contacto</h2>
+							<h3>Información de contacto</h3>
 							<div class="form-group col-md-6">
 								<label for="inputAddress">Nombre</label>
-								<input type="text" class="form-control" id="inputAddress" placeholder="Nombre">
+								<input name="name" type="text" class="form-control" id="inputAddress"
+									placeholder="Nombre" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputAddress">Apellidos</label>
+								<input name="last_name" type="text" class="form-control" id="inputAddress"
+									placeholder="Apellidos" required>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="inputEmail4">Email</label>
-								<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+								<input name="email" type="email" class="form-control" id="inputEmail4"
+									placeholder="Email" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputAddress">Numero Telefonico</label>
+								<input name="phone_number" type="number" max='99999999999' min='999999' class="form-control"
+									placeholder="300 000 1111" required>
 							</div>
 
 						</div>
-						<h2>Permítenos conocer tu moto para personalizar tus servicios</h2>
+						<h5>Permítenos conocer tu moto para personalizar tus servicios</h5>
 						<div class="form-group">
 							<label for="inputAddress">Marca</label>
-							<select class="form-control" id="exampleFormControlSelect1">
+							<select name="marca" class="form-control" id="exampleFormControlSelect1">
 								{% for manufacture in manufactures %}
-								<option>{{ manufacture.name }} </option>
+								<option value="{{manufacture.id}}">{{ manufacture.name }} </option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="inputAddress">Usas tu moto como:</label>
+							<select name="use" class="form-control" id="exampleFormControlSelect1">
+								{% for use in motorbikeUse %}
+								<option value="{{use.id}}">{{ use.name }} </option>
 								{% endfor %}
 							</select>
 						</div>
 
 						<div class="form-group">
 							<label for="inputAddress">Modelo</label>
-							<input type="text" id="datepicker" />
+							<input name="model" type="number" class="form-control" id="model_input" />
+						</div>
 
-						</div>
 						<div class="form-group">
-							<label for="inputAddress">Cilindraje</label>
-							<input type="text" class="form-control">
+							<label for="inputAddress">Usas tu moto como:</label>
+							<select name="cylinder" class="form-control" id="exampleFormControlSelect1">
+								{% for cylinder in cylinders %}
+								<option value="{{cylinder.id}}">{{ cylinder.name }} </option>
+								{% endfor %}
+							</select>
 						</div>
+
 						<div class="form-group">
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck">
+								<input class="form-check-input" type="checkbox" id="gridCheck" required>
 								<label class="form-check-label" for="gridCheck">
 									Acepto terminos y condiciones
 								</label>
@@ -164,9 +195,6 @@
 						</div>
 						<button type="submit" class="btn btn-primary">Enviar</button>
 					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">C</button>
 				</div>
 			</div>
 

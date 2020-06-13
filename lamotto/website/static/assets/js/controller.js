@@ -1,20 +1,20 @@
-$(function () {
-    $("#datepicker").datepicker({
-        changeYear: true,
-        showButtonPanel: true,
-        dateFormat: 'yy',
-        maxDate: "+12",
-        onClose: function (dateText, inst) {
-            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-            $(this).datepicker('setDate', new Date(year, 1));
-        }
-    });
-    $("#datepicker").focus(function () {
-        $(".ui-datepicker-month").hide();
-        $(".ui-datepicker-calendar").hide();
+function OpenModalRegister() {
+    $('#form_modal').modal("toggle")
+}
+// Load init information form
+$(document).ready(function () {
+    const date = new Date();
+    const dateMin = date.getFullYear() - 15
+    const dateMax = date.getFullYear() + 1
+
+    console.log("ready!");
+    $("#model_input").attr({
+        "max": dateMax, // substitute your own
+        "min": dateMin, // values (or variables) here
+        "value": date.getFullYear()
     });
 });
 
-function OpenModalRegister() {
-    $('#form_modal').modal("toggle")
+function printDiv() {
+    window.print();
 }
