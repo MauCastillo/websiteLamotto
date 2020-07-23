@@ -43,10 +43,11 @@ class Cylinder(models.Model):
 
 class Client(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 12 digits allowed.")
-    phone_number = models.CharField(validators=[phone_regex], max_length=12, blank=True) # validators should be a list
+    phone_number = models.CharField(validators=[phone_regex], max_length=12, blank=True)
+    placa = models.CharField(max_length=7, blank=True)
+    cedula = models.IntegerField(validators=[MaxValueValidator(999999999999), MinValueValidator(9999999)] )
     name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    motorbike_use = models.ForeignKey(MotorbikeUse, on_delete=models.CASCADE)
     cylinder_head = models.ForeignKey(Cylinder, on_delete=models.CASCADE)
     manufacturer = models.ForeignKey(Manufacture, on_delete=models.CASCADE)
     email = models.EmailField(max_length=70, null=True, blank=True)

@@ -23,10 +23,11 @@ def home(request):
         modelClient.name = request.POST.get('name')
         modelClient.last_name = request.POST.get('last_name')
         modelClient.phone_number = request.POST.get('phone_number')
-        modelClient.motorbike_use = MotorbikeUse.objects.get(id=request.POST.get('use'))
         modelClient.cylinder_head = Cylinder.objects.get(id=request.POST.get('cylinder'))
         modelClient.manufacturer = Manufacture.objects.get(id=request.POST.get('marca'))
         modelClient.email = request.POST.get('email')
+        modelClient.placa = request.POST.get('placa')
+        modelClient.cedula = request.POST.get('cedula')
         modelClient.save()
         sendEmail(modelClient.id)
 
@@ -64,21 +65,28 @@ def sendEmail(clientId):
     message = 'Nombre {name} \n'
     message += 'Apellido: {last_name} \n'
     message += 'Telefono: {phone_number} \n'
-    message += 'Uso: {motorbike_use} \n'
     message += 'Cilindraje: {cylinder_head} \n'
     message += 'Marca: {manufacturer} \n'
     message += 'Model: {model_date} \n'
+    message += 'Placa: {placa} \n'
+    message += 'Cedula: {cedula} \n'
 
     body = message.format(
         name=client.name,
         last_name=client.last_name,
         phone_number=client.phone_number,
-        motorbike_use=client.motorbike_use,
         cylinder_head=client.cylinder_head,
         manufacturer=client.manufacturer,
-        model_date=client.model_date
+        model_date=client.model_date,
+        placa=client.placa,
+        cedula=client.cedula
     )
 
     email_from = settings.EMAIL_HOST_USER
     recipient_list = list(list_email)
     send_mail( subject, body, email_from, recipient_list )
+
+
+def termino(request):
+
+    return render(request, 'terms_and_conditions.html')
