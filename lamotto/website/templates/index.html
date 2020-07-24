@@ -24,67 +24,6 @@
 			<img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto" style="width:650px;height:280px;" />
 		</section>
 
-		<!-- Main -->
-		<section id="main" class="container">
-
-			<section class="box special">
-				<header class="major">
-					<form method="post">
-						{% csrf_token %}
-						<h3>Información de contacto</h3>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="inputAddress">Nombre:</label>
-								<input name="name" type="text" class="form-control" placeholder="Nombre" required>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="inputAddress">Apellidos:</label>
-								<input name="last_name" type="text" class="form-control" placeholder="Apellidos"
-									required>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-3">
-								<label for="inputEmail4">Email:</label>
-								<input name="email" type="email" class="form-control" placeholder="Email" required>
-							</div>
-							<div class="form-group col-md-3">
-								<label for="inputAddress">Numero Telefonico:</label>
-								<input name="phone_number" type="number" max='99999999999' min='999999'
-									class="form-control" placeholder="300 000 1111" required>
-							</div>
-							<div class="form-group col-md-3">
-								<label>Numero de cedula del propietario:</label>
-								<input name="cedula" type="number" max='999999999999' min='999999' class="form-control"
-									placeholder="112276515" required>
-							</div>
-							<div class="form-group col-md-2">
-								<label>Placa:</label>
-								<input name="placa" type="text" max='7' min='5' class="form-control"
-									placeholder="AAA-12B" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="egaCheck" required>
-								<label class="form-check-label" for="egaCheck">Eres mayor de 18 años</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck" required>
-								<label class="form-check-label" for="gridCheck">
-									<a href="{% url 'termino' %}" target="_blank">Acepto la política de tratamiento de
-										datos, términos y condiciones</a>
-								</label>
-							</div>
-						</div>
-						<button type="submit" class="btn btn-primary">Enviar</button>
-					</form>
-				</header>
-			</section>
-		</section>
-		<!-- Banner -->
 
 		<div class="moto-widget moto-widget-block moto-background-fixed moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto"
 			data-widget="block" data-spacing="lala"
@@ -158,7 +97,7 @@
 																data-spacing="sasa"
 																data-visible-on="+desktop,tablet,mobile-h,mobile-v">
 																<div class="moto-widget-spacer-block"
-																	style="height:15px">
+																	style="height:35px">
 																</div>
 															</div>
 															<div data-widget-id="wid_1530782633_475fe00it"
@@ -201,7 +140,7 @@
 																data-spacing="sasa"
 																data-visible-on="+desktop,tablet,mobile-h,mobile-v">
 																<div class="moto-widget-spacer-block"
-																	style="height:15px">
+																	style="height:265px">
 																</div>
 															</div>
 														</div>
@@ -209,7 +148,7 @@
 
 
 
-													<div class="moto-widget moto-widget-row__column moto-cell col-sm-4 moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+													<div class="moto-widget moto-widget-row__column moto-cell col-sm-8 moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
 														data-widget="row.column" data-container="container"
 														data-bg-position="left top">
 
@@ -254,20 +193,68 @@
 																data-animation="">
 																<div
 																	class="moto-widget-text-content moto-widget-text-editable">
-																	<h3 style="text-align: center;"
-																		class="moto-text_system_8"><span class="moto-color5_5">NUESTROS USUARIOS</span></h3>
-																		<br>
-																	<h3 style="text-align: center;"
-																		class="moto-text_normal">
-																		<span class="moto-color5_5">
-																			<p>Moteros y Moteras que buscan la comodidad
-																				de un taller donde y cuando lo
-																				necesitan, la
-																				seguridad de un servicio garantizado y
-																				el control de encontrar lo que requiere
-																				su moto en
-																				un solo lugar</p>
-																		</span></h3>
+
+																			<!-- Main -->
+		
+				<header class="major">
+					<form method="post">
+						{% csrf_token %}
+						<h3 style="text-align: center;"
+							class="moto-text_system_8"><span class="moto-color5_5">Información de contacto</span></h3>
+						<div class="form-row" style="text-align: left;">
+							<div class="form-group col-md-6">
+								<label for="inputAddress"><b>Nombre:</b></label>
+								<input name="name" type="text" class="form-control" placeholder="Nombre" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputAddress"><b>Apellidos:</b></label>
+								<input name="last_name" type="text" class="form-control" placeholder="Apellidos"
+									required>
+							</div>
+						</div>
+						<div class="form-row" style="text-align: left;">
+							<div class="form-group col-md-6">
+								<label for="inputEmail4"><b>Email:</b></label>
+								<input name="email" type="email" class="form-control" placeholder="Email" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputAddress"><b>Numero Telefonico:</b></label>
+								<input name="phone_number" type="number" max='99999999999' min='999999'
+									class="form-control" placeholder="300 000 1111" required>
+							</div>
+							<div class="form-group col-md-8">
+								<label><b>Numero de cedula del propietario:</b></label>
+								<input name="cedula" type="number" max='999999999999' min='999999' class="form-control"
+									placeholder="112276515" required>
+							</div>
+							<div class="form-group col-md-4">
+								<label><b>Placa:</b></label>
+								<input name="placa" type="text" max='7' min='5' class="form-control"
+									placeholder="AAA-12B" required>
+							</div>
+						</div>
+						<div class="form-group" style="text-align: left;">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="egaCheck" required>
+								<label class="form-check-label" for="egaCheck"><b>Eres mayor de 18 años</b></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheck" required>
+								<label class="form-check-label" for="gridCheck">
+									<a href="{% url 'termino' %}" style="color: white;" target="_blank">Acepto la política de tratamiento de
+										datos, términos y condiciones</a>
+								</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Enviar</button>
+						<button type="button" class="btn btn-success btn btn-whatsapp"><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button>
+					</form>
+				</header>
+		
+		<!-- Banner -->
+
 																</div>
 															</div>
 
@@ -280,71 +267,9 @@
 																	style="height:15px">
 																</div>
 															</div>
-
-														</div>
-
-													</div>
-													<div class="moto-widget moto-widget-row__column moto-cell col-sm-4 moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
-														data-widget="row.column" data-container="container"
-														data-spacing="maaa" data-bg-position="left top">
-
-														<div class="moto-widget moto-widget-container moto-container_content_5b3de3f721"
-															data-widget="container" data-container="container"
-															data-css-name="moto-container_content_5b3de3f721"
-															data-bg-position="left top">
-
-
-															<div data-widget-id="wid_1530782711_iwu9bf0lh"
-																class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto "
-																data-widget="spacer" data-preset="default"
-																data-spacing="sasa"
-																data-visible-on="+desktop,tablet,mobile-h,mobile-v">
-																<div class="moto-widget-spacer-block"
-																	style="height:15px">
-																</div>
-															</div>
-
-															<div data-widget-id="wid_1530782711_t164j3kbu"
-																class="moto-widget moto-widget-image moto-preset-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto  "
-																data-widget="image">
-																<span class="moto-widget-image-link">
-																	<img data-src="/mt-demo/67900/67970/mt-content/uploads/2018/07/mt-1517-home-icon3.png"
-																		class="moto-widget-image-picture lazyloaded"
-																		data-id="148" title="" alt=""
-																		src="/mt-demo/67900/67970/mt-content/uploads/2018/07/mt-1517-home-icon3.png">
-																</span>
-															</div>
-
-															<div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
-																data-widget="text" data-preset="default"
-																data-spacing="saaa" data-visible-on="-"
-																data-animation="">
-																<div
-																	class="moto-widget-text-content moto-widget-text-editable">
-																	<h3 style="text-align: center;"
-																		class="moto-text_system_8">
-																		<span class="moto-color5_5">REPUTABLE
-																			COMPANY</span>
-																	</h3>
-																	<h3 style="text-align: center;"
-																		class="moto-text_normal">
-																		<span class="moto-color5_5">Operating for more
-																			than 30
-																			years, earning a reputation for service and
-																			beautiful work.</span></h3>
-																</div>
-															</div>
-															<div data-widget-id="wid_1530782711_q13ghl7yk"
-																class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto "
-																data-widget="spacer" data-preset="default"
-																data-spacing="sasa"
-																data-visible-on="+desktop,tablet,mobile-h,mobile-v">
-																<div class="moto-widget-spacer-block"
-																	style="height:15px">
-																</div>
-															</div>
 														</div>
 													</div>
+													
 												</div>
 											</div>
 										</div>
