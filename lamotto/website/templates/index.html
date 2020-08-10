@@ -11,19 +11,31 @@
 </head>
 
 <body class="landing is-preload">
-	<div id="page-wrapper">
 
-		<!-- Header -->
-		<header id="header" class="alt">
-			<a href="{% url 'home' %}"><img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto"
-					style="width:150px;height:60px;" /></a>
-		</header>
-
-		<!-- Banner -->
+<!-- Banner -->
 		<section id="banner">
-			<img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto" style="width:650px;height:280px;" />
+			<div class="">
+				<img src="{% static 'images/logo-lamotto.png' %}" alt="Logo la motto" style="width:650px;height:280px;" /><br><br>
+			</div>
+			
+			<div class="container-fluid">
+			<div class="moto-cell">
+				<h3 style="text-align: center;"
+							class="moto-text_system_8"><span class="moto-color5_5">Entendimos que tu moto es un elemento</span></h3>
+				<h3 style="text-align: center;"
+							class="moto-text_system_8"><span class="moto-color5_5">básico en tu vida y buscas servicios</span></h3>
+				<h3 style="text-align: center;"
+							class="moto-text_system_8"><span class="moto-color5_5">cómodos y seguros para cuidarla</span></h3>
+			</div></div><br><br><br><br>
+			<div>
+				<h2 style="text-align: center;" class="moto-text_system_6"><span
+														class="moto-color5_5">Te damos las opciones</span></h2>
+			</div>
 		</section>
 
+	<div id="page-wrapper">
+
+		
 
 		<div class="moto-widget moto-widget-block moto-background-fixed moto-spacing-top-large moto-spacing-right-auto moto-spacing-bottom-large moto-spacing-left-auto"
 			data-widget="block" data-spacing="lala"
@@ -68,10 +80,10 @@
 											data-widget="text" data-preset="default" data-spacing="saaa"
 											data-visible-on="-" data-animation="">
 											<div class="moto-widget-text-content moto-widget-text-editable">
-												<p style="text-align: center;" class="moto-text_system_8">OUR BENEFITS
+												<p style="text-align: center;" class="moto-text_system_8">Déjanos conocerte para personalizar tus servicios
 												</p>
 												<h2 style="text-align: center;" class="moto-text_system_6"><span
-														class="moto-color5_5">WHAT WE OFFER</span></h2>
+														class="moto-color5_5">Registra tu moto</span></h2>
 											</div>
 										</div>
 										<div class="moto-widget moto-widget-row moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
@@ -133,7 +145,7 @@
 																			dispositivo móvil personal</span>
 																	</h3>
 																</div>
-															</div>
+															</div><br>
 															<div data-widget-id="wid_1530782698_jb766xwa6"
 																class="moto-widget moto-widget-spacer moto-preset-default moto-spacing-top-small moto-spacing-right-auto moto-spacing-bottom-small moto-spacing-left-auto "
 																data-widget="spacer" data-preset="default"
@@ -191,6 +203,9 @@
 																data-widget="text" data-preset="default"
 																data-spacing="saaa" data-visible-on="-"
 																data-animation="">
+
+					<h3 style="text-align: justify;"
+							class="moto-text_system_8"><span class="moto-color5_5">Para completar tu resgistro ten a la mano tu tarjeta de propiedad</span></h3>
 																<div
 																	class="moto-widget-text-content moto-widget-text-editable">
 
@@ -199,11 +214,9 @@
 				<header class="major">
 					<form method="post">
 						{% csrf_token %}
-						<h3 style="text-align: center;"
-							class="moto-text_system_8"><span class="moto-color5_5">Información de contacto</span></h3>
 						<div class="form-row" style="text-align: left;">
 							<div class="form-group col-md-6">
-								<label for="inputAddress"><b>Nombre:</b></label>
+								<label for="inputAddress"><b>Nombres:</b></label>
 								<input name="name" type="text" class="form-control" placeholder="Nombre" required>
 							</div>
 							<div class="form-group col-md-6">
@@ -218,12 +231,12 @@
 								<input name="email" type="email" class="form-control" placeholder="Email" required>
 							</div>
 							<div class="form-group col-md-6">
-								<label for="inputAddress"><b>Numero Telefonico:</b></label>
+								<label for="inputAddress"><b>Número telefónico:</b></label>
 								<input name="phone_number" type="number" max='99999999999' min='999999'
 									class="form-control" placeholder="300 000 1111" required>
 							</div>
 							<div class="form-group col-md-8">
-								<label><b>Numero de cedula del propietario:</b></label>
+								<label><b>No de cédula registrado en tu tarjeta de propiedad:</b></label>
 								<input name="cedula" type="number" max='999999999999' min='999999' class="form-control"
 									placeholder="112276515" required>
 							</div>
@@ -283,14 +296,26 @@
 		</div>
 
 		<section id="pay_method">
-			<div class="parrafo">
-				<font size="+4"><b>MEDIOS DE PAGO </b></font>
-				<br><br>
-				<font size="+3">Por tu seguridad y la de nuestros motto partners <b>NO ACEPTAMOS PAGO EN EFECTIVO.</b>
-					Realiza tus pagos en línea o transferencias, usando equipos seguros, tu computador o dispositivo
-					móvil personal
-				</font>
+			<div class="parrafo" style="text-align: center;">
+				<font size="+4">
+					<b>¿Cómo lo hacemos?</b>
+				</font><br><br>
+				<font size="+3">Entendimos que buscas la tranquilidad de un buen servicio para tu moto
+				</font><br><br>
 			</div>
+			<div>
+				<font size="+4">
+					<b>Te la damos</b>
+				</font>			
+			</div><br>
+			<div>
+				<font size="+4">
+					<b>a un dedo de distancia</b>
+				</font>
+			</div><br><br>
+			<div>
+				<button type="button" class="btn btn-success btn btn-whatsapp"><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button>
+			</div>				
 		</section>
 		<!-- CTA -->
 		<section id="cta" class="footer_register">
