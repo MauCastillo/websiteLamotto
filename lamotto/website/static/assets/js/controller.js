@@ -1,3 +1,4 @@
+const phoneNumber = "3122513459"
 function OpenModalRegister() {
     $('#form_modal').modal("toggle")
 }
@@ -17,4 +18,13 @@ $(document).ready(function () {
 
 function printDiv() {
     window.print();
+}
+
+function WhatsAppLink() {
+    window.open(`https://wa.me/+57${phoneNumber}?text=Me%20interesa%20el%20servicio`);
+}
+
+function WhatsAppUser(userID) {
+    console.log(">>> userID <<<", userID)
+    window.open(`https://wa.me/+57${phoneNumber}?text=Número%20de%20ticket:${userID}`);
 }
