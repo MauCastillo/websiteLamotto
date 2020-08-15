@@ -212,18 +212,16 @@
   background: #4d4d4d;
 }
 
-.moto-bg-color4 {
-  background: #8c8787;
+#pay_method {
+  background-attachment: scroll, fixed;
+  background-image: url('../../images/mt-1517-home-parallax3.jpg');
+  background-position: top left, center center;
+  background-repeat: no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 2em 0 2em 0;
+  text-align: center;
 }
-
-.moto-bg-color4_1 {
-  background: #736e6e;
-}
-
-.moto-bg-color4_2 {
-  background: #807a7a;
-}
-
 .moto-bg-color4_3 {
   background: #8c8787;
 }
@@ -7257,4 +7255,27 @@ h4 {
 .moto-container_width-fixed,
 .row-fixed .container-fluid {
   max-width: 1200px;
+}
+
+.how_to {
+  background-attachment: scroll, fixed;
+  background-image: url('../../images/mt-1517-home-parallax3.jpg');
+  background-position: top left, center center;
+  background-repeat: no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 2em 0 2em 0;
+  text-align: center;
+}
+
+.banner_principal {
+  background-attachment: scroll, fixed;
+  background-color: #666;
+  background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 2em 0 2em 0;
+  text-align: center;
 }
