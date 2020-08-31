@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./img/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Lamotto</title>
+</head>
+
+<body>
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img class="img-banner" src="./img/logo-lamotto.png" alt="Logo la motto" />
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm">
+                        <p class="parrafo_banner">
+                            Entendimos que tu moto es un elemento
+                            básico en tu vida y buscas servicios
+                            cómodos y seguros para cuidarla
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h1>Te damos las opciones</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="form_section">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="parrafo_red_form"><b>Déjanos conocerte para personalizar tus servicios</b></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <img class="img-form" src="./img/form-image.png" alt="moto woman" />
+                </div>
+                <div class="col">
+                    <h5>
+                        Para completar tu registro
+                        ten a la mano tu tarjeta de propiedad
+                    </h5>
+                    <form id="form-register" @submit="checkForm" method="post">
+                        <p v-if="errors.length">
+                            <b>Por favor, corrija el(los) siguiente(s) error(es):</b>
+                        <ul>
+                            <li v-for="error in errors">{{ error }}</li>
+                        </ul>
+                        </p>
+                        <div class="row" style="text-align: left;">
+                            <div class="form-group col s6">
+                                <label>Nombres:</label>
+
+                                <input v-model="name" name="name" type="text" class="form-control" placeholder="Nombre"
+                                    required>
+                            </div>
+                            <div class="form-group col s4">
+                                <label>Apellidos:</label>
+                                <input v-model="lastname" name="last_name" type="text" class="form-control"
+                                    placeholder="Apellidos" required>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: left;">
+                            <div class="form-group col s12">
+                                <label>
+                                    Email:
+                                </label>
+                                <input v-model="email" name="email" type="email" class="form-control"
+                                    placeholder="Email" required>
+                            </div>
+                            <div class="form-group col l6">
+                                <label>
+                                    Número
+                                    telefónico:
+                                </label>
+                                <input v-model="phone" name="phone_number" type="number" max='99999999999' min='999999'
+                                    class="form-control" placeholder="300 000 1111" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col s8">
+                                <label>Número de cédula registrado en
+                                    tu tarjeta de
+                                    propiedad:</label>
+                                <input v-model="identification" name="cedula" type="number" max='999999999999'
+                                    min='999999' class="form-control" placeholder="112276515" required>
+                            </div>
+                            <div class="col s4">
+                                <label>Placa del vehículo:</label>
+                                <input v-model="placa" name="placa" type="text" max='7' min='5' class="form-control"
+                                    placeholder="AAA-12B" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <label>
+                                    <input id="ega-verification" type="checkbox" required />
+                                    <span>Eres mayor de 18 año</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <label>
+                                    <input id="ega-verification" type="checkbox" required />
+                                    <span><a href="./terms_and_conditions.html" style="color: white;"
+                                            target="_blank">Acepto la
+                                            política de tratamiento de
+                                            datos, términos y
+                                            condiciones</a></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <input class="btn btn-primary" type="submit" value="Solicitar">
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="how_to_section">
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h4>¿Cómo lo hacemos?</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p>Entendimos que buscas
+                        la tranquilidad de un buen
+                        servicio para tu moto
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <h5>Medios de pago</h5>
+                    <p>
+                        Tu serguridad y la de nuestros motto partners
+                        <b>No Hacemos pagos en efectivo.</b>
+                        Realiza tus pagos en línea o transferencias, usando equipos seguros, tu computadora o
+                        dispositivo móvil personal
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h5>Te lo damos</h5>
+                    <p class="parrafo_red">
+                        a un dedo de distancia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social" class="footer_red">
+        <img src="./img/mt-1517-home-logo-content1.png" alt="">
+        <h5>Entendimos que tu moto, la puedes
+            cuidar desde tu celular y te damos
+            todas las opciones
+        </h5>
+        <ul class="footer_icons">
+            <li><a href="#" class="material-icons">facebook</a></li>
+        </ul>
+        <a v-on:click="WhatsAppLink" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+    </section>
+
+</body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/FormController.js"></script>
+<script src="./js/SocialController.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
