@@ -1,5 +1,5 @@
 .footer_red {
-    background: #d81428;
+    background: #ff273d;
     color: #f9e6df;
     padding: 2.5em 0 3em 0;
     text-align: center;
@@ -43,7 +43,7 @@
 
 .parrafo_red_form {
     color: #d81428;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 p {
@@ -51,10 +51,11 @@ p {
 }
 
 .whatsapp {
+    cursor: pointer; 
     position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
+    width:48px;
+    height:46px;
+    bottom:206px;
     right:40px;
     background-color:#25d366;
     color:#FFF;
@@ -63,9 +64,67 @@ p {
     font-size:30px;
     z-index:100;
   }
+
+  .facebook {
+    cursor: pointer; 
+    position:fixed;
+    width:48px;
+    height:46px;
+    bottom:156px;
+    right:40px;
+    background-color:#4267B2;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+
+  .instagram {
+    cursor: pointer; 
+    position:fixed;
+    width:48px;
+    height:46px;
+    bottom:106px;
+    right:40px;
+    background-color:#bc2a8d;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  .twitter {
+    cursor: pointer; 
+    position:fixed;
+    width:48px;
+    height:46px;
+    bottom:56px;
+    right:40px;
+    background-color:#1da1f2;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  .youtube {
+    cursor: pointer; 
+    position:fixed;
+    width:48px;
+    height:46px;
+    bottom:6px;
+    right:40px;
+    background-color:#FF0000;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
   
   .whatsapp-icon {
-    margin-top:13px;
+    margin-top:1px;
   }
 
   .img-form {
@@ -75,9 +134,9 @@ p {
   }
 
   .img-banner {
-    border-radius: 8px;
+  
     width: 80%;
-    height: 70%;
+    height: 105%;
   }
 
 .banner {
@@ -89,7 +148,7 @@ p {
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     color: #fff;
-    padding: 1em 0 1em 0;
+    padding: 1em 0 2em 0;
     text-align: center;
 }
 

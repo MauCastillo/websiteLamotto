@@ -1,9 +1,9 @@
 <?php
 	/* Database connection start */
 	$servername = "localhost";
-	$username = "id12075287_lamotto";
-	$password = "n9YkY^DFj~kwSx[J";
-	$dbname = "id12075287_lamottouse";
+	$username = "root";
+	$password = "";
+	$dbname = "motto_website";
 
 	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	try {

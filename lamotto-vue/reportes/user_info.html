@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--  disabled meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="../img/favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Lamotto</title>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <div class="row" style="text-align: left;">
+      <div class="form-group col s6">
+        <label>Nombres:</label>
+
+        <input v-model="user.name" name="name" type="text" class="form-control" placeholder="Nombre"  disabled>
+      </div>
+      <div class="form-group col s4">
+        <label>Apellidos:</label>
+        <input v-model="user.lastname" name="last_name" type="text" class="form-control" placeholder="Apellidos"  disabled>
+      </div>
+    </div>
+    <div class="row" style="text-align: left;">
+      <div class="form-group col s12">
+        <label>
+          Email:
+        </label>
+        <input v-model="user.email" name="email" type="email" class="form-control" placeholder="Email"  disabled>
+      </div>
+      <div class="form-group col l6">
+        <label>
+          Número
+          telefónico:
+        </label>
+        <input v-model="user.phone" name="phone_number" type="number" max='99999999999' min='999999' class="form-control"
+          placeholder="300 000 1111"  disabled>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col s8">
+        <label>Número de cédula registrado en
+          tu tarjeta de
+          propiedad:</label>
+        <input v-model="user.identification" name="cedula" type="number" max='999999999999' min='999999' class="form-control"
+          placeholder="112276515"  disabled>
+      </div>
+      <div class="col s4">
+        <label>Placa del vehículo:</label>
+        <input v-model="user.placa" name="placa" type="text" max='7' min='5' class="form-control" placeholder="AAA-12B"
+           disabled>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/UserController.js"></script>
+
+</html>

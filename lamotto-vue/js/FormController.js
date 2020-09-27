@@ -23,7 +23,8 @@ var app = new Vue({
                     'name': this.name,
                     'lastname': this.lastname,
                     'identification': this.identification,
-                    'phone': this.phone
+                    'phone': this.phone,
+                    'link': `${window.location.href}reportes/user_info.html?user_id`
                 }
             }).then(response => {
                 console.log("Respose", response)
@@ -81,7 +82,8 @@ var app = new Vue({
                     'name': this.name,
                     'lastname': this.lastname,
                     'identification': this.identification,
-                    'phone': this.phone
+                    'phone': this.phone,
+                    'link': `${window.location.href}/reportes/user_info.html?user_id`
                 }
             }).then(response => {
                 console.log("Respose", response)
@@ -89,9 +91,8 @@ var app = new Vue({
                 console.log(error)
             }).finally(() => {
             })
-        },
+        }
     },
-
     mounted() {
         var d = new Date();
         var n = d.getHours();
